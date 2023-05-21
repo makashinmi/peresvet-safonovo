@@ -12,7 +12,7 @@
 <body class="page">
 	<!-- Header -->
     <header class="header">
-        <img class="header__logo" src="./img/eccrcgSkHqU.jpg" alt="Грузится">
+		<img class="header__logo" src="{% static '/img/eccrcgSkHqU.jpg' %}" alt="Грузится">
         <ul class="header__links">
             <li class="header__link"><a href="peresvet_safonovo@mail.ru" class="header__lang-link">peresvet_safonovo@mail.ru</a></li>
             <li class="header__link"><a href="#" class="header__lang-link">ВКонтакте</a></li>
@@ -63,7 +63,9 @@
         <input type="radio" name="point" id="slide10" checked>
         <div class="slider">
 			{% for photo in slider_list %}
-			<div class='slides' style='background-image: url(media/{{ photo.file }});'></div>
+			<div class='slides'>
+				<img class='sliderrr' src='media/{{ photo.file }}' alt=''>
+			</div>
 			{% endfor %} 
         </div>	
         <div class="controls">
@@ -85,7 +87,7 @@
         <div class="novosti__title">Пока ты думаешь, другие делают!</div>
         <div class="grid">
 			{% for post in post_list %}
-			<div style='padding-right: 100px;'>
+			<div class='two-grid'>
 				<img class='img-grid' src='media/{{ post.thumbnail }}' alt='Грузится'>
 				<div class='first-text'>
 					{{ post.text }}
@@ -99,7 +101,7 @@
 		<div class="novosti__title">Наши тренеры</div>
 		<div class="grid">
 		{% for trainer in trainer_list %}
-			<div>
+			<div class='two-grid'>
 				<img class='img-grids' src='media/{{ trainer.photo }}' alt='Грузится'>
 				<div>
 					<h3>{{ trainer.fullname }}</h3>
@@ -128,7 +130,7 @@
 	<footer>
 		<div class="footer">
 			<div class="column">
-			<img class="footer__logo" src="./img/1.jpg">
+				<img class="footer__logo" src="{% static 'img/1.jpg' %}">
 			<div class="column__text">Бокс для каждого!</div>
 			</div>
 			<div class="columns">
