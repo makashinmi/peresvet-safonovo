@@ -1,0 +1,73 @@
+.header {
+  max-width: 1184px;
+  display: flex;
+  justify-content: space-between;
+  padding: 28px 48px 0;
+}
+  
+@media screen and (max-width: 768px) {
+  .header {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+  
+@media screen and (max-width: 450px) {
+  .header {
+    padding: 16px 16px 0;
+  }
+}
+.header__logo{
+  width: 150px;
+  height: 150px;
+}
+@media screen and (max-width: 320px) {
+  .header__logo {
+    width: 142px;
+    height: 42px;
+  }
+}
+
+/* ниже мы привели пример двух селекторов, чтобы вы вспомнили запись элемента */
+
+/* и элемента с модификатором вида ключ-значение */
+.header__links {
+  display: flex;
+  min-width: 78px;
+  justify-content: space-between;
+  font-size: 24px;
+  line-height: 28px;
+  list-style: none;
+  padding: 0;
+  padding-inline-start: 0px;
+  margin-block-end: 0px;
+  margin-block-start: 0px;
+}
+
+@media screen and (max-width: 450px) {
+  .header__links {
+    min-width: 62px;
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+.header__link{
+  margin: 18px 0 0;
+}
+.header__lang-link {
+  margin: 18px 0 0;
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.4s;
+  margin-right: 30px;
+}
+  
+.header__lang-link:hover {
+  opacity: 0.8;
+}
+  
+@media screen and (max-width: 320px) {
+  .header__lang-link {
+    margin-top: 14px;
+  }
+}

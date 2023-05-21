@@ -1,0 +1,4 @@
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, index, sessions
+Running migrations:
+  Applying index.0002_slider_photo_rename_trainers_trainer...
