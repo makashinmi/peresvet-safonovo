@@ -7,3 +7,4 @@ from .models import *
 admin.site.register(Trainer)
 admin.site.register(Post)
 admin.site.register(Photo)
+admin.site.register(Slider_Photo)

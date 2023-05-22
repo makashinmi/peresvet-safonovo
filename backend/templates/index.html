@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Safonofo boxing Club</title>
 	<link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+	<link rel="icon" type="image/x-icon" href="{% static 'img/logo.png' %}">
 </head>
 
 <body class="page">
@@ -16,12 +17,12 @@
 		<ul class="header__links">
             <li class="header__link"><a href="peresvet_safonovo@mail.ru" class="header__lang-link">peresvet_safonovo@mail.ru</a></li>
             <li class="header__link">
-                <a href="#" class="header__lang-link">
-                    <img  class="logo__link" src="./img/vk.png" alt="грузится">
+                <a href="https://vk.com/id112448563" class="header__lang-link">
+					<img  class="logo__link" src="{% static '/img/vk.png' %}" alt="грузится">
                 </a></li>
             <li class="header__link">
-                <a href="#" class="header__lang-link">
-                    <img class="logo__links" src="./img/a5c7e9ad-ac85-4a9d-9981-0cb6cdfa8f7b.png" alt="грузится">
+                <a href="https://wa.me/79517135772" class="header__lang-link">
+					<img class="logo__links" src=".{% static '/img/whatsapp.png' %}" alt="грузится">
                 </a>
             </li>                         
 	</header>
@@ -45,7 +46,7 @@
 
         <div class="media-card card">
             <div class="media-card-video">
-                <iframe width="100%" height="250px" class="media-card-clip" src="../../сайт/img/" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+				<iframe width="100%" height="250px" class="media-card-clip" src="{% static 'img/video.mp4' %}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
             </div>
             <div class="media-card-text">
                 <div class="media-card-name">🥊 Давайте к нам</div>
@@ -56,40 +57,32 @@
     </div>
 
 	<!-- Gallery -->
-    <div class="wrapper">
-        <input type="radio" name="point" id="slide1" checked>
-        <input type="radio" name="point" id="slide2">
-        <input type="radio" name="point" id="slide3">
-        <input type="radio" name="point" id="slide4">
-        <input type="radio" name="point" id="slide5">
-        <input type="radio" name="point" id="slide6">
-        <input type="radio" name="point" id="slide7">
-        <input type="radio" name="point" id="slide8">
-        <input type="radio" name="point" id="slide9">
-        <input type="radio" name="point" id="slide10" checked>
+    <div class="wrapper">		 
+		{% for index, _ in slider_list %}
+		{% if index == 1 or index == slider_list|length %}
+		<input type='radio' name='point' id='slide{{ index }}' checked>
+		{% else %}
+		<input type='radio' name='point' id='slide{{ index }}'>
+		{% endif %}
+		{% endfor %}
+		
         <div class="slider">
-			{% for photo in slider_list %}
-			<div class='slides'>
+			{% for index, photo in slider_list %}
+			<div class='slides slide{{ index }}'>
 				<img class='sliderrr' src='media/{{ photo.file }}' alt=''>
 			</div>
 			{% endfor %} 
-        </div>	
+        </div>
+
         <div class="controls">
-            <label for="slide1"></label>
-            <label for="slide2"></label>
-            <label for="slide3"></label>
-            <label for="slide4"></label>
-            <label for="slide5"></label>
-            <label for="slide6"></label>
-            <label for="slide7"></label>
-            <label for="slide8"></label>
-            <label for="slide9"></label>
-            <label for="slide10"></label>
+			{% for index, _ in slider_list %}
+			<label for='slide{{ index }}'></label>
+			{% endfor %}
         </div>
     </div>
 
 	<!-- Blog Section -->
-    <div class="novosti">
+    <div class="novosti" id='blog'>
         <div class="novosti__title">Пока ты думаешь, другие делают!</div>
         <div class="grid">
 			{% for post in post_list %}
@@ -103,7 +96,7 @@
         </div>
 
 	<!-- Trainers section -->
-	<div class="novosti">
+	<div class="novosti" id='trainers'>
 		<div class="novosti__title">Наши тренеры</div>
 		<div class="grid">
 		{% for trainer in trainer_list %}
@@ -146,13 +139,13 @@
 						<a href="#" class="text__list">О нас</a>
 					</li>
 					<li class="list__text">
-						<a href="#" class="text__list">Контакты</a>
+						<a href="" class="text__list">Контакты</a>
 					</li>
 					<li class="list__text">
-						<a href="#" class="text__list">Тренера</a>
+						<a href="#trainers" class="text__list">Тренера</a>
 					</li>
 					<li class="list__text">
-						<a href="#" class="text__list">Новости</a>
+						<a href="#blog" class="text__list">Новости</a>
 					</li>
 				</ul>
 			</div>
@@ -160,16 +153,16 @@
 				<div class="title__text">Адреса</div>
 				<ul class="list">
 					<li class="list__text">
-						<a href="#" class="text__list">Г.Сафоново, ул.Ленина, 4 ДК</a>
+						<a href="http://maps.google.com/?q=Г.Сафоново, ул.Ленина, 4 ДК" class="text__list">Г.Сафоново, ул.Ленина, 4 ДК</a>
 					</li>
 					<li class="list__text">
-						<a href="#" class="text__list">Г.Сафоново, п.Горный, Куйбышева, 9 </a>
+						<a href="http://maps.google.com/?q=Г.Сафоново, ул. Куйбышева, 9" class="text__list">Г.Сафоново, п.Горный, Куйбышева, 9 </a>
 					</li>
 					<li class="list__text">
-						<a href="+79517135772" class="text__list">+ 7 951 713 57 72</a>
+						<a href="#a" class="text__list">+ 7 951 713 57 72</a>
 					</li>
 					<li class="list__text">
-						<a href="peresvet_safonovo@mail.ru" class="text__list">peresvet_safonovo@mail.ru</a>
+						<a href="#a" class="text__list">peresvet_safonovo@mail.ru</a>
 					</li>
 				</ul>
 			</div>
