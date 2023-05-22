@@ -10,6 +10,14 @@
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
+   
+}
+
+.object{
+  position: fixed;
+  opacity: 0.1;
+  max-width: 1280px;
+  min-width: 320px;
 }
 .header {
     max-width: 1184px;
