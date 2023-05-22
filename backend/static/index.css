@@ -260,10 +260,10 @@
 }
 
 .wrapper .controls {
-	left: 50%;
-	margin-left: -175px;
-	position: absolute;
+	display: flex;
+	justify-content: center;
 }
+
 
 .wrapper label {
 	cursor: pointer;
