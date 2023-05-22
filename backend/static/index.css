@@ -226,10 +226,10 @@
 	box-sizing: border-box;
 }
 .wrapper {
-	height: 700px;
+	height: 600px;
 	margin: 100px auto 0;
 	position: relative;
-	width: 700px;
+	width: 500px;
 }
 
 .slider {
@@ -246,16 +246,10 @@
 .wrapper > input {
 	display: none;
 }
-.slides {
-	height: inherit;
-	position: absolute;
-	width: inherit;
-  background-size: cover;
-}
 .sliderrr{
-  height: inherit;
-	position: absolute;
-	width: inherit;
+  height: 600px;
+  width: 500px;
+  position: absolute;
   background-size: cover;
 }
 
