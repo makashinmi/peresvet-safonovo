@@ -15,9 +15,21 @@
         <img class="header__logo" src="./img/eccrcgSkHqU.jpg" alt="Грузится">
         <ul class="header__links">
             <li class="header__link"><a href="peresvet_safonovo@mail.ru" class="header__lang-link">peresvet_safonovo@mail.ru</a></li>
+<<<<<<< Updated upstream
             <li class="header__link"><a href="#" class="header__lang-link">ВКонтакте</a></li>
             <li class="header__link"><a href="#" class="header__lang-link">Whatsapp</a></li>
         </ul>                             
+=======
+            <li class="header__link">
+				<a href="{{ config.VK }}" class="header__lang-link">
+					<img  class="logo__link" src="{% static '/img/vk.png' %}" alt="грузится">
+                </a></li>
+            <li class="header__link">
+				<a href="https://wa.me/{{ config.CONTACT_PHONE }}" class="header__lang-link">
+					<img class="logo__links" src=".{% static '/img/whatsapp.png' %}" alt="грузится">
+                </a>
+            </li>                         
+>>>>>>> Stashed changes
 	</header>
 
 	<!-- Main -->
@@ -29,11 +41,7 @@
                 <span class="media-texts">НАЧИНАЕТСЯ ЗДЕСЬ</span>
             </div>
             <div class="media-paragraph">
-				Идея тренировать подростков возникла в&nbsp;Сергеева Олега Владимировича еще 19&nbsp;лет назад,
-                позже она переросла в&nbsp;спортивной клуб Пересвет, который начал свою работу в&nbsp;п. Горный. Сейчас в&nbsp;клубе более 60&nbsp;воспитанников,
-                с&nbsp;которыми занимаются два тренера Сергеев Олег Владимирович и&nbsp;Сергеев Данила Олегович. Воспитанники участвуют в&nbsp;соревнованиях,
-                в&nbsp;клуб часто приходят взрослые ребята боксеры и&nbsp;ветераны бокса, которые дают мастер-классы для воспитанников, 
-                помогают ребятам готовиться к&nbsp;соревнованиям. Сейчас клуб активно развивается, набирая разные возрастные группы от&nbsp;7&nbsp;до&nbsp;59&nbsp;лет.
+				{{ config.TEXT_1 }}				
 			</div>
         </div>
 
@@ -43,8 +51,9 @@
             </div>
             <div class="media-card-text">
                 <div class="media-card-name">🥊 Давайте к нам</div>
-                <div class="media-card-paragraph">Тренируем мужчин, девушек и&nbsp;детей. Прокачиваем силу, форму и&nbsp;уверенность в&nbsp;себе.
-                                                  Занимаемся персонально, в&nbsp;группах и&nbsp;мини-группах. Уровень подготовки не&nbsp;важен, важна ваша цель.</div>
+                <div class="media-card-paragraph">
+					{{ config.TEXT_2 }}
+				</div>
             </div>
         </div>
     </div>
@@ -126,7 +135,7 @@
 
 	<!-- Footer -->
 	<footer>
-		<div class="footer">
+		<div class="footer" id='contacts'>
 			<div class="column">
 			<img class="footer__logo" src="./img/1.jpg">
 			<div class="column__text">Бокс для каждого!</div>
@@ -138,7 +147,7 @@
 						<a href="#" class="text__list">О нас</a>
 					</li>
 					<li class="list__text">
-						<a href="#" class="text__list">Контакты</a>
+						<a href="#contacts" class="text__list">Контакты</a>
 					</li>
 					<li class="list__text">
 						<a href="#" class="text__list">Тренера</a>
@@ -151,17 +160,17 @@
 			<div class="columnss">
 				<div class="title__text">Адреса</div>
 				<ul class="list">
-					<li class="list__text">
-						<a href="#" class="text__list">Г.Сафоново, ул.Ленина, 4 ДК</a>
+					{% for address in address_list %}
+					<li class='list__text'>
+						<a href='http://maps.google.com/?q={{ address.address }}' class='text__list'>{{ address.address }}</a>
+					</li>
+					{% endfor %}
+
+					<li class='list__text'>
+						<a class="text__list">+{{config.CONTACT_PHONE}}</a>
 					</li>
 					<li class="list__text">
-						<a href="#" class="text__list">Г.Сафоново, п.Горный, Куйбышева, 9 </a>
-					</li>
-					<li class="list__text">
-						<a href="+79517135772" class="text__list">+ 7 951 713 57 72</a>
-					</li>
-					<li class="list__text">
-						<a href="peresvet_safonovo@mail.ru" class="text__list">peresvet_safonovo@mail.ru</a>
+						<a class="text__list">peresvet_safonovo@mail.ru</a>
 					</li>
 				</ul>
 			</div>

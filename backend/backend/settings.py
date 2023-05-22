@@ -29,6 +29,10 @@ STATICFILES_DIRS = (
 )
 
 
+# Django Constance module
+CONSTANCE_BACKEND = 'constance.backends.database.DatabaseBackend'
+
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -51,7 +55,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'constance',
 ]
+
+CONSTANCE_IGNORE_ADMIN_VERSION_CHECK = True
+
+CONSTANCE_CONFIG = {
+    'TEXT_1': ('Идея тренировать подростков возникла в Сергеева Олега Владимировича еще 19 лет назад, позже она переросла в спортивной клуб Пересвет, который начал свою работу в п. Горный. Сейчас в клубе более 60 воспитанников, с которыми занимаются два тренера Сергеев Олег Владимирович и Сергеев Данила Олегович. Воспитанники участвуют в соревнованиях, в клуб часто приходят взрослые ребята боксеры и ветераны бокса, которые дают мастер-классы для воспитанников, помогают ребятам готовиться к соревнованиям. Сейчас клуб активно развивается, набирая разные возрастные группы от 7 до 59 лет. ', 'Текст по левой части наверху страницы'),
+    # 'HEADER_1': (),
+    'TEXT_2': ('Тренируем мужчин, девушек и детей. Прокачиваем силу, форму и уверенность в себе. Занимаемся персонально, в группах и мини-группах. Уровень подготовки не важен, важна ваша цель.', 'Текст по правой части наверху страницы'),
+    # 'HEADER_2': (),
+    'VK': ('https://vk.com/id112448563', 'Контактная страница для ВКонтакте'),
+    'CONTACT_PHONE': ('79517135772', 'Телефон для связи'),
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
