@@ -28,15 +28,20 @@
     justify-content: space-between;
     padding: 28px 48px 0;
   }
+  @media screen and (max-width: 400px) {
+    .header{
+       padding: 28px 25px 0;
+    }
+  }
       .header__logo{
     width: 150px;
     height: 150px;
   }
   @media screen and (max-width: 320px) {
     .header__logo {
-      width: 100px;
+      width: 50px;
       height: 42px;
-      margin-right: 50px;
+      margin-right: 0;
     }
   }
   
