@@ -19,14 +19,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
+import os
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
 MEDIA_URL = 'media/'
 STATIC_URL = 'static/'
 
-MEDIA_ROOT = BASE_DIR / 'media'
-
-STATICFILES_DIRS = (
-    BASE_DIR / 'static',
-)
+STATICFILES_DIRS = [BASE_DIR / 'test/']
 
 
 # Django Constance module
@@ -40,9 +40,9 @@ CONSTANCE_BACKEND = 'constance.backends.database.DatabaseBackend'
 SECRET_KEY = 'django-insecure-r%x&ah7%7idgh)ml=z3n-rgkgs@b4)emge2*vy4#hw^_+o)r%!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.peresvet-safonovo.ru', '95.163.240.43', 'localhost']
 
 
 # Application definition
