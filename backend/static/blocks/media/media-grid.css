@@ -1,7 +1,0 @@
-.media-grid{
-    display: grid;
-    grid-template-columns: 6.5fr 5fr;
-    grid-column-gap: 48px;
-    margin-bottom: 64px;
-    margin-top: 200px;
-}
